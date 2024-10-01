@@ -17,7 +17,7 @@ const StatisticT = () => {
     const fetchStatistic = async () => {
         try {
           const response = await axios.get(
-            `http://localhost:5000/api/transactions/statistics?month=${selectedMonth}`
+            `${import.meta.env.VITE_API_URL}/statistics?month=${selectedMonth}`
           );
           const data = response.data;
           setStatistics({

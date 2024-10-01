@@ -22,7 +22,7 @@ const Piechart = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/api/transactions/pieChart?month=${selectedMonth}`
+          `${import.meta.env.VITE_API_URL}/pieChart?month=${selectedMonth}`
         );
         const pieData = response.data;
         setData(pieData);

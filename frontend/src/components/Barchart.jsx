@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Bar } from "react-chartjs-2";
+
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -32,7 +33,7 @@ const BarChart = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/api/transactions/barChart?month=${selectedMonth}`
+          `${import.meta.env.VITE_API_URL}/barChart?month=${selectedMonth}`
         );
         const barData = response.data;
         setData(barData);

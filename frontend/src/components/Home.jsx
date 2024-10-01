@@ -21,7 +21,7 @@ const Home = () => {
 
   // Fetch Data from Backend
   const fetchData = (term = "", month = "") => {
-    let query = `http://localhost:5000/api/transactions/transactionsView?search=${term}`;
+    let query = `${import.meta.env.VITE_API_URL}/transactionsView?search=${term}`;
     if (month) {
       query += `&month=${month}`;
     }
